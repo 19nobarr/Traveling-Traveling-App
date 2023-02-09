@@ -1,0 +1,8 @@
+
+1. takes in a user location
+2. converts user location to gps coordinates using google maps
+3. finds all of the pokestops in the nearby area and puts them in a table DONE!
+4. converts the datum into nodes where each pokestop is a node
+5. TSP - HERE
+6. TSP algorithms convert nodes into an ordered list
+7. Finally the list is presented to the user in order of the stops that the user should head to first
