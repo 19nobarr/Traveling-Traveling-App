@@ -1,35 +1,7 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <sstream>
-#include "python.h"
 
 
-class stop {
 
-public:
-    stop() {}
-    stop(std::string nameIn, int xIn, int yIn) {
-        stopName = nameIn;
-        x = xIn;
-        y = yIn;
-    }
-    std::string getName() {
-        return stopName;
-    }
-    int getX() {
-        return x;
-    }
-    int getY() {
-        return y;
-    }
-
-private:
-    std::string stopName;
-    int x;
-    int y;
-};
+#include "stops.h"
 
 int main() {
 
@@ -38,13 +10,6 @@ int main() {
     // run graphics driver
 
     // run python scraping script
-    //FILE* PScriptFile = fopen("scraper.py", "r");
-    //if(PScriptFile){
-     //   PyRun_SimpleFile(PScriptFile, "scraper.py");
-      //  fclose(PScriptFile);
-   // }
-    //Py_Finalize();
-
 
     // extract nodes from the csv file
 
@@ -69,13 +34,15 @@ int main() {
         }
     }
 
+    /*
     std::cout << "NAME ------- X -------- Y\n";
     for (int i=0; i < pokeStops.size(); i++) {
         std::cout << i+1 << ". " << pokeStops[i].getName() << ' ' << pokeStops[i].getX() << ' ' <<  pokeStops[i].getY() << '\n';
     }
+    */
 
     // run tsp using the nodes
-
+    tspDriver(pokeStops);
 
     // print the output throught the driver
 
